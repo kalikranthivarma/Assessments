@@ -246,11 +246,11 @@ export default function StudentList() {
     }
   ];
 
-  const filteredStudents = students.filter((student) =>
-    Object.values(student).some((value) =>
-      String(value).toLowerCase().includes(search.toLowerCase())
-    )
-  );
+  const filteredStudents = students.filter((student) => {
+    return student.name.includes(search);
+  }
+);
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 p-6">
